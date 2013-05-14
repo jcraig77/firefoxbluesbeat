@@ -23,11 +23,11 @@ Bitrate - The bitrate of the track.
 
 Sample Rate - The sample rate of the track.
 
-Danceability -
+Danceability - The Echo Nest defines danceability as the ease with which a person could dance to a song, over the course of the whole song. We use a mix of features to compute danceability, including beat strength, tempo stability, overall tempo, and more.
 
 Duration - The duration of the track in seconds.
 
-Energy -
+Energy - From the Echo Nest API documentation: The feature mix we use to compute energy includes loudness and segment durations.
 
 Key - From the Echo Nest API documentation: the estimated overall key of a track. The key identiﬁes the tonic triad, the chord, major or minor, which 
 represents the ﬁnal point of rest of a piece
@@ -36,7 +36,7 @@ Loudness - From the Echo Nest API documentation: the overall loudness of a track
 an entire track and are useful for comparing relative loudness of segments and tracks. Loudness is the quality of 
 a sound that is the primary psychological correlate of physical strength (amplitude).
 
-Liveness -
+Liveness - From the Echo Nest API documentation: a number between 0 and 1 that gives a measure of how ‘live’ we think the song is. The higher the liveness the more likely the song is a live song.  
 
 Tempo - From the Echo Nest API documentation: the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the 
 speed or pace of a given piece and derives directly from the average beat duration.
