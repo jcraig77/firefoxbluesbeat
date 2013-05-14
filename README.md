@@ -5,6 +5,9 @@ A sidebar add-on for Mozilla Firefox meant aid students study and analyze blues 
 Users can upload or drag and drop mp3 tracks of popular blues music onto the sidebar.
 Detailed information about the track and artist will be retrieved from the Echo Nest API and displayed.
 
+If you have the .xpi package file saved to your computer and would like to install it as a Firefox add-on, simply drag the file to any open Firefox window.
+http://kb.mozillazine.org/Installing_extensions#Single-user_installation
+
 ![ScreenShot](https://raw.github.com/jcraig77/firefoxbluesbeat/master/sidebar_screenshot.png)
 
 The user can choose to either select a file from their local operating system or drag a link from the main Firefox browswer window onto the drag target within the sidebar.  A progress bar will display while the track is being analyzed.  Note: It may take several seconds for the track to be uploaded and/or analyzed.
