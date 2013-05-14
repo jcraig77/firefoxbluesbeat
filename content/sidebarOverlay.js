@@ -1,5 +1,5 @@
 var BluesbeatSidebar = {
-  api_key: "S7A1PZ9RJYYLW7PL1",
+  api_key: "",
   
   init: function() {
     
