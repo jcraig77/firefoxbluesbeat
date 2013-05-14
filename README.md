@@ -1,7 +1,9 @@
 firefoxbluesbeat
 ================
 
-A sidebar add-on for Mozilla Firefox.  Users can upload or drag and drop mp3 tracks onto the sidebar.  Detailed information about the track and artist will be retrieved from the Echo Nest API and displayed.
+A sidebar add-on for Mozilla Firefox meant aid students study and analyze blues music.
+Users can upload or drag and drop mp3 tracks of popular blues music onto the sidebar.
+Detailed information about the track and artist will be retrieved from the Echo Nest API and displayed.
 
 ![ScreenShot](https://raw.github.com/jcraig77/firefoxbluesbeat/master/sidebar_screenshot.png)
 

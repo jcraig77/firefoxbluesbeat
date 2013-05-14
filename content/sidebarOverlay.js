@@ -1,7 +1,8 @@
 var BluesbeatSidebar = {
-
+  api_key: "S7A1PZ9RJYYLW7PL1",
+  
   init: function() {
-    api_key = "";
+    
     
     resultLabels = {'artist': 'Artist',
                     'title': 'Title',
@@ -72,12 +73,12 @@ var BluesbeatSidebar = {
   },
   
   getTrackInfo: function(trackURI) {
-    var targetURL = "http://developer.echonest.com/api/v4/track/upload?api_key=" + api_key +"&url=" + encodeURIComponent(trackURI);    
+    var targetURL = "http://developer.echonest.com/api/v4/track/upload?api_key=" + this.api_key +"&url=" + encodeURIComponent(trackURI);    
     var req = $.ajax({
                 url: targetURL,
                 type: "POST",
                 dataType:"json",
-                error: function(data) { alert("error: " + data["status"]["code"]); },
+                error: function(data) { alert("The Echo Nest API appears to be unavailable at the moment."); BluesbeatSidebar.clearResults(); },
                 contentType: "application/x-www-form-urlencoded",
                 accepts: "text/plain",
                 success: this.showTrackResults});
@@ -163,12 +164,12 @@ var BluesbeatSidebar = {
   
   getAudioSummary: function(trackId) {
     var audio_summary = {};
-    var targetURL = "http://developer.echonest.com/api/v4/track/profile?api_key=" + api_key + "&format=json&id=" + trackId + "&bucket=audio_summary";
+    var targetURL = "http://developer.echonest.com/api/v4/track/profile?api_key=" + this.api_key + "&format=json&id=" + trackId + "&bucket=audio_summary";
     var req = $.ajax({
                 url: targetURL,
                 type: "GET",
                 dataType:"json",
-                error: function() { alert("error"); },
+                error: function() { alert("The Echo Nest API appears to be unavailable at the moment."); BluesbeatSidebar.clearResults(); },
                 accepts: "text/plain",
                 async: false,
                 success: function(data){
@@ -212,12 +213,12 @@ var BluesbeatSidebar = {
   },
   
   getUploadedTrackInfo :  function(){
-    var targetURL = "http://developer.echonest.com/api/v4/track/upload?api_key=" + api_key + "&filetype=mp3";
+    var targetURL = "http://developer.echonest.com/api/v4/track/upload?api_key=" + this.api_key + "&filetype=mp3";
     var onload = function(data){
       BluesbeatSidebar.showTrackResults(data);
     };
     var onerror = function(data){
-      alert("Unable to load this track.");
+      alert("The Echo Nest API appears to be unavailable at the moment."); BluesbeatSidebar.clearResults();
     }
 
     var xhr = new XMLHttpRequest();
@@ -239,14 +240,14 @@ var BluesbeatSidebar = {
   },
   
   findSimilarArtists: function(artistName){
-    var targetURL = "http://developer.echonest.com/api/v4/artist/similar?api_key=" + api_key + "&name=" + encodeURIComponent(artistName) + "&format=json&results=1&start=0";    
+    var targetURL = "http://developer.echonest.com/api/v4/artist/similar?api_key=" + this.api_key + "&name=" + encodeURIComponent(artistName) + "&format=json&results=1&start=0";    
     var similar = [];
     
     var req = $.ajax({
                 url: targetURL,
                 type: "GET",
                 dataType:"json",
-                error: function(data) { alert("error: " + data["status"]["code"]); },
+                error: function(data) { alert("The Echo Nest API appears to be unavailable at the moment."); BluesbeatSidebar.clearResults(); },
                 accepts: "text/plain",
                 success: function(data){
                   similar = data["response"]["artists"];
