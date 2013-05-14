@@ -2,6 +2,7 @@ var BluesbeatSidebar = {
 
   init: function() {
     api_key = "";
+    
     resultLabels = {'artist': 'Artist',
                     'title': 'Title',
                     'release': 'Release',
