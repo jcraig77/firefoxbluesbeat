@@ -1,6 +1,7 @@
 var BluesbeatSidebar = {
 
   init: function() {
+    api_key = "";
     resultLabels = {'artist': 'Artist',
                     'title': 'Title',
                     'release': 'Release',
@@ -70,7 +71,7 @@ var BluesbeatSidebar = {
   },
   
   getTrackInfo: function(trackURI) {
-    var targetURL = "http://developer.echonest.com/api/v4/track/upload?api_key=S7A1PZ9RJYYLW7PL1&url=" + encodeURIComponent(trackURI);    
+    var targetURL = "http://developer.echonest.com/api/v4/track/upload?api_key=" + api_key +"&url=" + encodeURIComponent(trackURI);    
     var req = $.ajax({
                 url: targetURL,
                 type: "POST",
@@ -161,7 +162,7 @@ var BluesbeatSidebar = {
   
   getAudioSummary: function(trackId) {
     var audio_summary = {};
-    var targetURL = "http://developer.echonest.com/api/v4/track/profile?api_key=S7A1PZ9RJYYLW7PL1&format=json&id=" + trackId + "&bucket=audio_summary";
+    var targetURL = "http://developer.echonest.com/api/v4/track/profile?api_key=" + api_key + "&format=json&id=" + trackId + "&bucket=audio_summary";
     var req = $.ajax({
                 url: targetURL,
                 type: "GET",
@@ -210,7 +211,7 @@ var BluesbeatSidebar = {
   },
   
   getUploadedTrackInfo :  function(){
-    var targetURL = "http://developer.echonest.com/api/v4/track/upload?api_key=S7A1PZ9RJYYLW7PL1&filetype=mp3";
+    var targetURL = "http://developer.echonest.com/api/v4/track/upload?api_key=" + api_key + "&filetype=mp3";
     var onload = function(data){
       BluesbeatSidebar.showTrackResults(data);
     };
@@ -237,7 +238,7 @@ var BluesbeatSidebar = {
   },
   
   findSimilarArtists: function(artistName){
-    var targetURL = "http://developer.echonest.com/api/v4/artist/similar?api_key=S7A1PZ9RJYYLW7PL1&name=" + encodeURIComponent(artistName) + "&format=json&results=1&start=0";    
+    var targetURL = "http://developer.echonest.com/api/v4/artist/similar?api_key=" + api_key + "&name=" + encodeURIComponent(artistName) + "&format=json&results=1&start=0";    
     var similar = [];
     
     var req = $.ajax({
