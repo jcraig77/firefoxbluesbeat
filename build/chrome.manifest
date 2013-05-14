@@ -1,0 +1,5 @@
+content bluesbeat jar:chrome/bluesbeat.jar!/content/
+skin bluesbeat classic/1.0 jar:chrome/bluesbeat.jar!/skin/
+locale bluesbeat en-US jar:chrome/bluesbeat.jar!/locale/en-US/
+
+overlay chrome://browser/content/browser.xul  chrome://bluesbeat/content/browserOverlay.xul

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://bluesbeat/locale/sidebarOverlay.dtd">
+
+<overlay id="bluesbeatSidebarOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://bluesbeat/content/browserOverlay.js"></script>
+    <menupop id="viewSidebarMenu">
+        <menuitem key="key_openBluesbeatSidebar"
+                  observes="viewBluesbeatSidebar" />
+    </menupop>
+    
+    <keyset id="mainKeyset">
+      <key id="key_openBluesbeatSidebar" command="viewBluesbeatSidebar"
+           key="&bluesbeat.sidebar.accesskey;"
+           modifiers="&bluesbeat.modifierskey;" />
+    </keyset>
+    
+    <broadcasterset id="mainBroadcasterSet">
+      <broadcaster id="viewBluesbeatSidebar"
+                   label="&bluesbeat.sidebar.title;"
+                   autoCheck="false"
+                   type="checkbox"
+                   group="sidebar"
+                   sidebarurl="chrome://bluesbeat/content/sidebar.xul"
+                   sidebartitle="&bluesbeat.sidebar.title;"
+                   oncommand="toggleSidebar('viewBluesbeatSidebar');" />
+    </broadcasterset>
+</overlay>

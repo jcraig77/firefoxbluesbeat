@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type"text/css" ?>
+<?xml-stylesheet href="chrome://browser/skin/browser.css" type="text/css" ?>
+<?xml-stylesheet href="chrome://bluesbeat/content/bluesbeat.css" type="text/css" ?>
+<!DOCTYPE overlay SYSTEM "chrome://bluesbeat/locale/sidebarOverlay.dtd">
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml">
+    <page id="bluesbeatSidebar" title="&bluesbeat.sidebar.title;"
+          xmlnx="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+        <script src="sidebarOverlay.js" />
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        
+        <vbox flex="1" height="60">
+            <label value="Select an MP3 file to upload..." />
+            <html:input type="file" id="myFileField" name="track" onchange="BluesbeatSidebar.selectFile();" />
+        </vbox>
+        <vbox flex="1">
+            <label value="Drag a link to a MP3 track here to analyze." ondragenter="return BluesbeatSidebar.checkDrag(event)"
+                ondragover="return BluesbeatSidebar.checkDrag(event)"
+                ondrop="BluesbeatSidebar.doDrop(event)" height="100" class="bluesbeat-drop-target" />
+                        
+
+            <vbox id="bluesbeat-results" class="bluesbeatresult"><label id="errorlabel"></label>
+            </vbox>
+        </vbox>    
+    </page>
+</window>

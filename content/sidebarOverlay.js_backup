@@ -1,0 +1,18 @@
+/**
+ * Bluesbeat namespace.
+ */
+if ("undefined" == typeof(bluesbeat)) {
+  var bluesbeat = {};
+};
+
+
+$(document).ready(function() {
+
+    alert(9);
+});
+
+
+
+
+alert(5);
+

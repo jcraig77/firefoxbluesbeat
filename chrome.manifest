@@ -1,0 +1,5 @@
+content   bluesbeat                content/
+skin      bluesbeat  classic/1.0   skin/
+locale    bluesbeat  en-US         locale/en-US/
+
+overlay chrome://browser/content/browser.xul  chrome://bluesbeat/content/browserOverlay.xul
